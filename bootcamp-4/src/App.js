@@ -27,9 +27,13 @@ class App extends React.Component {
     })
   }
 
-  deleteUpdate(id) {
-    
-  }
+  handleDelete = id => {
+    alert("Button Clicked!");
+    console.log('id: ' + id);
+    console.log(this.props.data[id]);
+    //const buildings = data.
+    this.props.data.splice(id - 1, 1);
+  };
 
   render() {
 
@@ -59,6 +63,7 @@ class App extends React.Component {
                     data={this.props.data}
                     filterText={this.state.filterText}
                     selectedUpdate={this.selectedUpdate.bind(this)}
+                    onDelete={this.handleDelete}
                   />
                 </table>
               </div>

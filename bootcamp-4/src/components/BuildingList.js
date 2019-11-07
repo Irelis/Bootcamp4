@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({data, filterText, selectedUpdate}) => {
+export default ({data, filterText, selectedUpdate, onDelete}) => {
 	
 		//console.log('This is my directory file', this.props.data);
 		const buildingList = data
@@ -11,11 +11,17 @@ export default ({data, filterText, selectedUpdate}) => {
 		.map(directory => {
 
 			return (
-		
+				
 				<tr key={directory.id}
 					onClick={() => selectedUpdate(directory.id)}>
 					<td>{directory.code} </td>
 					<td> {directory.name} </td>
+					<button
+					onClick={() => onDelete(directory.id)}
+					//onClick={onDelete}
+					className="btn btn-lg btn-outline-danger ml-4">
+              Delete
+            </button>
 				</tr>
 			);
 		});
