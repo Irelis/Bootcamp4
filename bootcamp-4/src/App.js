@@ -22,6 +22,13 @@ class App extends React.Component {
 
   selectedUpdate(id) {
     //Here you will need to update the selectedBuilding property of state to the id passed into this function
+    this.setState({
+      selectedBuilding: id - 1
+    })
+  }
+
+  deleteUpdate(id) {
+    
   }
 
   render() {
@@ -51,6 +58,7 @@ class App extends React.Component {
                   <BuildingList
                     data={this.props.data}
                     filterText={this.state.filterText}
+                    selectedUpdate={this.selectedUpdate.bind(this)}
                   />
                 </table>
               </div>
@@ -58,6 +66,7 @@ class App extends React.Component {
             <div className="column2">
               <ViewBuilding 
               selectedBuilding={this.state.selectedBuilding}
+              data={this.props.data}
               />
             </div>
           </div>

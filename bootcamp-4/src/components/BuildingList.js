@@ -1,9 +1,8 @@
 import React from 'react';
 
-class BuilingList extends React.Component {
-	render() {
+export default ({data, filterText, selectedUpdate}) => {
+	
 		//console.log('This is my directory file', this.props.data);
-		const { data, filterText } = this.props;
 		const buildingList = data
 		.filter(name => {
 			//remove buildings that do not match current filter text
@@ -12,7 +11,9 @@ class BuilingList extends React.Component {
 		.map(directory => {
 
 			return (
-				<tr key={directory.id}>
+		
+				<tr key={directory.id}
+					onClick={() => selectedUpdate(directory.id)}>
 					<td>{directory.code} </td>
 					<td> {directory.name} </td>
 				</tr>
@@ -22,6 +23,5 @@ class BuilingList extends React.Component {
 		return <div>
 		{buildingList}
 		</div>;
-	}
+	
 }
-export default BuilingList;
