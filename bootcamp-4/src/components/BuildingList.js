@@ -12,10 +12,10 @@ export default ({data, filterText, selectedUpdate, onDelete}) => {
 
 			return (
 				
-				<tr key={directory.id}
-					onClick={() => selectedUpdate(directory.id)}>
-					<td>{directory.code} </td>
-					<td> {directory.name} </td>
+				<tr key={directory.id} /*onClick={() => selectedUpdate(directory)}*/
+					>
+					<td onClick={() => selectedUpdate(directory)}>{directory.code} </td>
+					<td onClick={() => selectedUpdate(directory)}> {directory.name} </td>
 					<button
 
 					onClick={() => onDelete(directory)}

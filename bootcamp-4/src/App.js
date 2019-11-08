@@ -20,15 +20,16 @@ class App extends React.Component {
     })
   }
 
-  selectedUpdate(id) {
+  selectedUpdate(theBuilding) {
     //Here you will need to update the selectedBuilding property of state to the id passed into this function
+    this.props.data.indexOf(theBuilding)
     this.setState({
-      selectedBuilding: id - 1
+      selectedBuilding: this.props.data.indexOf(theBuilding)
     })
   }
 
   handleDelete = ourListing => {
-    //alert("Button Clicked!");
+    alert("Button Clicked!");
     /*console.log('id: ' + id);
     console.log(this.props.data[id]);
     //const buildings = data.
@@ -43,6 +44,7 @@ class App extends React.Component {
     console.log('index: ' + this.props.data.indexOf(ourListing));
     this.props.data.splice(this.props.data.indexOf(ourListing), 1);
     console.log('array length after splice:' + this.props.data.length);
+    this.forceUpdate();
 
   };
 
