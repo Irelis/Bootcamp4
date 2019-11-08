@@ -33,6 +33,11 @@ class App extends React.Component {
     console.log(this.props.data[id]);
     //const buildings = data.
     this.props.data.splice(id - 1, 1);
+    for (var i = id; i < this.props.data.length; i++) //FIXME
+    {
+      this.props.data[i].id =  this.props.data[i].id - 1;
+      //console.log(this.props.data[i].id);
+    }
   };
 
   render() {
