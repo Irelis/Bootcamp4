@@ -24,7 +24,11 @@ import React from 'react';
 class ViewBuilding extends React.Component {
 	render() {
 		//console.log('This is my directory file', this.props.data[this.props.selectedBuilding])//this.props.selectedBuilding)
+
+
 		const theBuilding = this.props.data[this.props.selectedBuilding];
+		//console.log('supposed index: ' + this.props.data.indexOf(this.props.selectedBuilding));
+		//const theBuilding = this.props.data[this.props.data.indexOf(this.props.selectedBuilding)];
 		return (
 			<div>
 				<p>

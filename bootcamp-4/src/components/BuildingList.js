@@ -13,12 +13,12 @@ export default ({data, filterText, selectedUpdate, onDelete}) => {
 			return (
 				
 				<tr key={directory.id}
-					onClick={() => selectedUpdate(directory.id)}>
+					onClick={() => selectedUpdate(directory)}>
 					<td>{directory.code} </td>
 					<td> {directory.name} </td>
 					<button
 
-					onClick={() => onDelete(directory)}
+					onClick={() => onDelete(directory.id)}
 					//onClick={onDelete}
 					className="btn btn-lg btn-outline-danger ml-4">
               Delete
