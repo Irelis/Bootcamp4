@@ -27,9 +27,9 @@ class App extends React.Component {
     })
   }
 
-  handleDelete = id => {
-    alert("Button Clicked!");
-    console.log('id: ' + id);
+  handleDelete = ourListing => {
+    //alert("Button Clicked!");
+    /*console.log('id: ' + id);
     console.log(this.props.data[id]);
     //const buildings = data.
     this.props.data.splice(id - 1, 1);
@@ -37,7 +37,13 @@ class App extends React.Component {
     {
       this.props.data[i].id =  this.props.data[i].id - 1;
       //console.log(this.props.data[i].id);
-    }
+    }*/
+    console.log('array length:' + this.props.data.length);
+    console.log('the listing: ' + ourListing.name);
+    console.log('index: ' + this.props.data.indexOf(ourListing));
+    this.props.data.splice(this.props.data.indexOf(ourListing), 1);
+    console.log('array length after splice:' + this.props.data.length);
+
   };
 
   render() {

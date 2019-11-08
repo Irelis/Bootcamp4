@@ -17,7 +17,8 @@ export default ({data, filterText, selectedUpdate, onDelete}) => {
 					<td>{directory.code} </td>
 					<td> {directory.name} </td>
 					<button
-					onClick={() => onDelete(directory.id)}
+
+					onClick={() => onDelete(directory)}
 					//onClick={onDelete}
 					className="btn btn-lg btn-outline-danger ml-4">
               Delete
