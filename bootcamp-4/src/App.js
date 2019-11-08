@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterText: '',
+      filterText: 'hello',
       selectedBuilding: 0
     };
   }
@@ -23,7 +23,7 @@ class App extends React.Component {
   selectedUpdate(id) {
     //Here you will need to update the selectedBuilding property of state to the id passed into this function
     this.setState({
-      selectedBuilding: this.props.data.indexOf(id)
+      selectedBuilding: id - 1
     })
   }
 
@@ -38,12 +38,11 @@ class App extends React.Component {
       this.props.data[i].id =  this.props.data[i].id - 1;
       //console.log(this.props.data[i].id);
     }*/
-    //console.log('array length:' + this.props.data.length);
-    //console.log('the listing: ' + ourListing.name);
-    console.log('our listing: ' + ourListing);
-    console.log('index: ' + this.props.data.findIndex(building => building.id===ourListing));
-    this.props.data.splice(this.props.data.findIndex(building => building.id===ourListing), 1);
-    //console.log('array length after splice:' + this.props.data.length);
+    console.log('array length:' + this.props.data.length);
+    console.log('the listing: ' + ourListing.name);
+    console.log('index: ' + this.props.data.indexOf(ourListing));
+    this.props.data.splice(this.props.data.indexOf(ourListing), 1);
+    console.log('array length after splice:' + this.props.data.length);
 
   };
 
